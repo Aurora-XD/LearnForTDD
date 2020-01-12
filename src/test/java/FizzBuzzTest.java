@@ -99,4 +99,40 @@ public class FizzBuzzTest {
         Assert.assertEquals(expect,result);
     }
 
+    @Test
+    public void should_return_Fizz_when_number_include_7_and_include_3(){
+        String result = fizzBuzzWhizz.fizzBuzz(375);
+        String expect = "Fizz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_Fizz_when_number_include_7_and_exclude_3_and_only_cloud_divisible_by_3() {
+        String result = fizzBuzzWhizz.fizzBuzz(270);
+        String expect = "Fizz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_Whizz_when_number_include_7_and_exclude_3_and_only_cloud_divisible_by_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(7);
+        String expect = "Whizz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_FizzWhizz_when_number_include_7_and_exclude_3_and_cloud_divisible_by_3_and_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(1470);
+        String expect = "FizzWhizz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_origin_number_when_number_include_7_and_exclude_3_and_cloud_not_divisible_by_3_or_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(17);
+        String expect = "17";
+        Assert.assertEquals(expect,result);
+    }
+
+
 }
