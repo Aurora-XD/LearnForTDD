@@ -15,10 +15,7 @@ public class FizzBuzzWhizz {
             if (number % 7 == 0) {
                 result.append(whizz);
             }
-            if("".equals(result.toString())){
-                return String.valueOf(number);
-            }
-            return result.toString();
+            return getResultForFizzBuzz(number,result.toString());
         }
 
         if(includeSpecialNumber(number,5)){
@@ -29,10 +26,7 @@ public class FizzBuzzWhizz {
             if(number%7 == 0){
                 result.append(whizz);
             }
-            if("".equals(result.toString())){
-                return String.valueOf(number);
-            }
-            return result.toString();
+            return getResultForFizzBuzz(number,result.toString());
         }
 
         if(includeSpecialNumber(number,3)){
@@ -57,6 +51,13 @@ public class FizzBuzzWhizz {
             return String.valueOf(number);
         }
         return result.toString();
+    }
+
+    private String getResultForFizzBuzz(int number, String result){
+        if("".equals(result)){
+            return String.valueOf(number);
+        }
+        return result;
     }
 
     private boolean includeSpecialNumber(int number, int specialNum) {
