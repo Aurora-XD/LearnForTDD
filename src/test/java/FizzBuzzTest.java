@@ -70,4 +70,33 @@ public class FizzBuzzTest {
         String expect = "Fizz";
         Assert.assertEquals(expect,result);
     }
+
+    @Test
+    public void should_return_Buzz_when_number_include_5_and_only_cloud_divisible_by_5() {
+        String result = fizzBuzzWhizz.fizzBuzz(15);
+        String expect = "Buzz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_Whizz_when_number_include_5_and_only_cloud_divisible_by_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(56);
+        String expect = "Whizz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_BuzzWhizz_when_number_include_5_and_cloud_divisible_by_5_and_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(35);
+        String expect = "BuzzWhizz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_origin_number_when_number_include_5_and_cloud_not_divisible_by_5_or_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(52);
+        String expect = "52";
+        Assert.assertEquals(expect,result);
+    }
+
 }

@@ -4,6 +4,20 @@ public class FizzBuzzWhizz {
     private final String whizz = "Whizz";
 
     public String fizzBuzz(int number) {
+        if(includeSpecialNumber(number,5)){
+            StringBuilder result = new StringBuilder();
+            if(number%5 == 0){
+                result.append(buzz);
+            }
+            if(number%7 == 0){
+                result.append(whizz);
+            }
+            if("".equals(result.toString())){
+                return String.valueOf(number);
+            }
+            return result.toString();
+        }
+
         if(includeSpecialNumber(number,3)){
             return fizz;
         }
