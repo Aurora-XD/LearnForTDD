@@ -36,4 +36,24 @@ public class FizzBuzzTest {
         String expect = "Whizz";
         Assert.assertEquals(expect,result);
     }
+    @Test
+    public void should_return_FizzBuzz_when_number_could_divisible_by_3_and_5() {
+        String result = fizzBuzzWhizz.fizzBuzz(60);
+        String expect = "FizzBuzz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_FizzWhizz_when_number_could_divisible_by_3_and_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(21);
+        String expect = "FizzWhizz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_BuzzWhizz_when_number_could_divisible_by_5_and_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(140);
+        String expect = "BuzzWhizz";
+        Assert.assertEquals(expect,result);
+    }
 }

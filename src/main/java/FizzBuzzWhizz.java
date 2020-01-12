@@ -9,16 +9,20 @@ public class FizzBuzzWhizz {
     }
 
     private String getResultForDivision(int number){
+        StringBuilder result = new StringBuilder();
         if(number%3 == 0){
-            return fizz;
+            result.append(fizz);
         }
         if(number%5 == 0){
-            return buzz;
+            result.append(buzz);
         }
         if(number%7 == 0){
-            return whizz;
+            result.append(whizz);
         }
-        return String.valueOf(number);
+        if("".equals(result.toString())){
+            return String.valueOf(number);
+        }
+        return result.toString();
     }
 
 }
