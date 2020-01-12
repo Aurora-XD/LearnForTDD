@@ -56,4 +56,18 @@ public class FizzBuzzTest {
         String expect = "BuzzWhizz";
         Assert.assertEquals(expect,result);
     }
+
+    @Test
+    public void should_return_FizzBuzzWhizz_when_number_could_divisible_by_357() {
+        String result = fizzBuzzWhizz.fizzBuzz(210);
+        String expect = "FizzBuzzWhizz";
+        Assert.assertEquals(expect,result);
+    }
+
+    @Test
+    public void should_return_Fizz_when_number_include_3_and_exclude_57_even_number_could_div_by_3_or_5_or_7() {
+        String result = fizzBuzzWhizz.fizzBuzz(30);
+        String expect = "Fizz";
+        Assert.assertEquals(expect,result);
+    }
 }

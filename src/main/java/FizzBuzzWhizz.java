@@ -4,6 +4,9 @@ public class FizzBuzzWhizz {
     private final String whizz = "Whizz";
 
     public String fizzBuzz(int number) {
+        if(includeSpecialNumber(number,3)){
+            return fizz;
+        }
 
         return getResultForDivision(number);
     }
@@ -25,4 +28,7 @@ public class FizzBuzzWhizz {
         return result.toString();
     }
 
+    private boolean includeSpecialNumber(int number, int specialNum) {
+        return String.valueOf(number).contains(String.valueOf(specialNum));
+    }
 }
