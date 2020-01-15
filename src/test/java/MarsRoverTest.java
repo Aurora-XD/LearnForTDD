@@ -20,7 +20,7 @@ public class MarsRoverTest {
     @Test
     public void should_return_new_position_when_MarsRover_move_one_step() {
         MarsRover marsRover = new MarsRover(2,2,Direction.N);
-        marsRover.move();
+        marsRover.moveByCommands(Command.M.name());
         Position position = marsRover.getPosition();
         Assert.assertEquals(2,position.getX());
         Assert.assertEquals(3,position.getY());
@@ -29,7 +29,7 @@ public class MarsRoverTest {
     @Test
     public void should_not_change_direction_when_MarsRover_move() {
         MarsRover marsRover = new MarsRover(2,2,Direction.N);
-        marsRover.move();
+        marsRover.moveByCommands(Command.M.name());
         Direction currentDirection = marsRover.getCurrentDirection();
         Assert.assertEquals(Direction.N,currentDirection);
     }
@@ -37,11 +37,11 @@ public class MarsRoverTest {
     @Test
     public void should_return_current_direction_when_MarsRover_turn_left_or_right() {
         MarsRover marsRover = new MarsRover(2,3,Direction.N);
-        marsRover.turn(Command.L);
+        marsRover.moveByCommands(Command.L.name());
         Direction currentDirection1 = marsRover.getCurrentDirection();
         Assert.assertEquals(Direction.W,currentDirection1);
 
-        marsRover.turn(Command.R);
+        marsRover.moveByCommands(Command.R.name());
         Direction currentDirection2 = marsRover.getCurrentDirection();
         Assert.assertEquals(Direction.N,currentDirection2);
     }
