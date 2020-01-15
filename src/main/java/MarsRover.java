@@ -1,6 +1,17 @@
+import com.google.common.collect.ImmutableMap;
+
+import java.util.Map;
+
 public class MarsRover {
     private Position position;
     private Direction currentDirection;
+
+    private static Map<Direction,int[]> moveIndex = ImmutableMap.<Direction,int[]>builder()
+            .put(Direction.N,new int[]{0,1})
+            .put(Direction.S,new int[]{0,-1})
+            .put(Direction.E,new int[]{1,0})
+            .put(Direction.W,new int[]{-1,0})
+            .build();
 
     public MarsRover(int x,int y, Direction currentDirection) {
         this.position = new Position(x,y);
@@ -13,5 +24,10 @@ public class MarsRover {
 
     public Direction getCurrentDirection() {
         return currentDirection;
+    }
+
+    public void move() {
+        int[] steps = moveIndex.get(currentDirection);
+        this.position = new Position(this.position.getX()+steps[0],this.position.getY()+steps[1]);
     }
 }

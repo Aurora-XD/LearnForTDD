@@ -16,4 +16,13 @@ public class MarsRoverTest {
         Direction currentDirection = marsRover.getCurrentDirection();
         Assert.assertEquals(Direction.N,currentDirection);
     }
+
+    @Test
+    public void should_return_new_position_when_MarsRover_move_one_step() {
+        MarsRover marsRover = new MarsRover(2,2,Direction.N);
+        marsRover.move();
+        Position position = marsRover.getPosition();
+        Assert.assertEquals(2,position.getX());
+        Assert.assertEquals(3,position.getY());
+    }
 }
