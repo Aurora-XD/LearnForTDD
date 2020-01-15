@@ -30,4 +30,13 @@ public class MarsRover {
         int[] steps = moveIndex.get(currentDirection);
         this.position = new Position(this.position.getX()+steps[0],this.position.getY()+steps[1]);
     }
+
+    public void turn(Command command) {
+        if(Command.L.equals(command)){
+            this.currentDirection = currentDirection.getLeftDirection();
+        }
+        if(Command.R.equals(command)){
+            this.currentDirection = currentDirection.getRightDirection();
+        }
+    }
 }

@@ -16,7 +16,7 @@ public enum Direction {
         return Direction.valueOf(left);
     }
 
-    private Direction getRightDirection(){
+    public Direction getRightDirection(){
         return Direction.valueOf(right);
     }
 }
