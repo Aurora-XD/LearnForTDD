@@ -10,4 +10,8 @@ public class MarsRover {
     public Position getPosition() {
         return this.position;
     }
+
+    public Direction getCurrentDirection() {
+        return currentDirection;
+    }
 }
