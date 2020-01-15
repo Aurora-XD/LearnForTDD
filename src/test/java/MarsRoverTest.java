@@ -25,4 +25,12 @@ public class MarsRoverTest {
         Assert.assertEquals(2,position.getX());
         Assert.assertEquals(3,position.getY());
     }
+
+    @Test
+    public void should_not_change_direction_when_MArsRover_move() {
+        MarsRover marsRover = new MarsRover(2,2,Direction.N);
+        marsRover.move();
+        Direction currentDirection = marsRover.getCurrentDirection();
+        Assert.assertEquals(Direction.N,currentDirection);
+    }
 }
