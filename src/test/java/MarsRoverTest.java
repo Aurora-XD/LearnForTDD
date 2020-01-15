@@ -45,4 +45,14 @@ public class MarsRoverTest {
         Direction currentDirection2 = marsRover.getCurrentDirection();
         Assert.assertEquals(Direction.N,currentDirection2);
     }
+
+    @Test
+    public void should_return_current_position_and_direction_when_MarsRover_move_by_fix_command() {
+        MarsRover marsRover = new MarsRover(2,2,Direction.N);
+        String command = "LMMRRMMMR";
+        marsRover.moveByCommands(command);
+        Assert.assertEquals(3,marsRover.getPosition().getX());
+        Assert.assertEquals(2,marsRover.getPosition().getY());
+        Assert.assertEquals("S",marsRover.getCurrentDirection().name());
+    }
 }

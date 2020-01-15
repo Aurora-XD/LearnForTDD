@@ -39,4 +39,16 @@ public class MarsRover {
             this.currentDirection = currentDirection.getRightDirection();
         }
     }
+
+    public void moveByCommands(String fixCommands) {
+        String[] commands = fixCommands.split("");
+        for (String command : commands) {
+            if(Command.M.equals(Command.valueOf(command))){
+                this.move();
+            }
+            if(Command.L.equals((Command.valueOf(command))) || Command.R.equals(Command.valueOf(command))){
+                this.turn(Command.valueOf(command));
+            }
+        }
+    }
 }
